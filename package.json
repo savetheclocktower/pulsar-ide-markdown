@@ -1,10 +1,9 @@
 {
   "name": "pulsar-ide-markdown",
   "main": "./lib/main",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "An IDE package for Markdown using md-lsp",
-  "keywords": [
-  ],
+  "keywords": [],
   "activationHooks": [
     "source.gfm:root-scope-used",
     "text.html.markdown:root-scope-used"
