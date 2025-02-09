@@ -2,7 +2,7 @@
   "name": "pulsar-ide-markdown",
   "main": "./lib/main",
   "version": "0.0.1",
-  "description": "An IDE package for Markdown using md-lsp",
+  "description": "An IDE package for Markdown using md-lsp or Marksman",
   "keywords": [],
   "activationHooks": [
     "source.gfm:root-scope-used",
@@ -21,12 +21,56 @@
     "@savetheclocktower/atom-languageclient": "^1.17.11"
   },
   "configSchema": {
-    "serverBin": {
-      "title": "Path to `md-lsp`",
+    "server": {
+      "title": "Language Server",
+      "description": "Which language server this package should use. Choose your favorite between Marksman and md-lsp.",
+      "type": "string",
+      "default": "Marksman",
+      "enum": ["Marksman", "md-lsp"],
+      "order": 0
+    },
+    "binMarksman": {
+      "title": "Path to Marksman",
+      "default": "marksman",
+      "type": "string",
+      "description": "Path to your installation of `marksman`. If you've chosen “md-lsp” above, you may ignore this setting. The default value should work if `marksman` is on your `PATH; if you encounter errors, consider specifying the full, absolute path to your `marksman` binary.",
+      "order": 1
+    },
+    "binMdLsp": {
+      "title": "Path to md-lsp",
       "default": "md-lsp",
       "type": "string",
-      "description": "If `md-lsp` is on your path, you can use the default value. If you encounter errors, consider specifying the full, absolute path to your `md-lsp` binary.",
-      "order": 0
+      "description": "Path to your installation of `md-lsp`. If you've chosen “Marksman” above, you may ignore this setting. The default value should work if `md-lsp` is on your `PATH; if you encounter errors, consider specifying the full, absolute path to your `md-lsp` binary.",
+      "order": 2
+    },
+
+    "diagnostics": {
+      "title": "Diagnostics",
+      "order": 3,
+      "type": "object",
+      "properties": {
+        "enable": {
+          "title": "Enable",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to show diagnostic messages via the `linter` package."
+        },
+        "ignoredCodes": {
+          "title": "Ignored Codes",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "A comma-separated list of diagnostic codes that should be ignored by the linter."
+        },
+        "includeMessageCodeInMessageBody": {
+          "title": "Include Message Code in Message Body",
+          "type": "boolean",
+          "default": false,
+          "description": "When enabled, will include the code for a linter message at the end of its body."
+        }
+      }
     }
   },
   "consumedServices": {

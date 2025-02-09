@@ -2,15 +2,19 @@
 
 An IDE provider package for Markdown.
 
-Taps into an installation of [`md-lsp`](https://github.com/matkrin/md-lsp) — which **you must install on your own**. Follow the link for installation instructions.
+Taps into an installation of [`md-lsp`](https://github.com/matkrin/md-lsp) or [Marksman](https://github.com/artempyanykh/marksman) — which **you must install on your own**. Follow the links for installation instructions.
 
 ## Configuration
 
-Install `md-lsp`, then point the “Path to `md-lsp`” setting (`pulsar-ide-markdown.serverBin`) to the absolute path to your `md-lsp` executable. (The default value of `md-lsp` may work if it’s already in your `PATH`.)
+1. Install either Marksman or `md-lsp`.
+2. Open the settings for this package.
+3. Choose one of the two options for “Language Server” — the one corresponding to whichever server you installed.
+4. Specify the path to the server in the appropriate setting — either “Path to Marksman” or “Path to md-lsp.” The default value may work if the binary is in your `PATH`; if you encounter an error on startup, you may instead want to specify the absolute path.
+5. Integration into built-in packages (`autocomplete-plus` and `symbols-view`) will happen automatically. For other integrations, install some of the optional packages below.
 
 ## What does this package do?
 
-Install this package, then install any of the following packages to get special features. (Not all of these have been extensively tested; file a bug if any don’t work as expected.)
+Once your language server is installed and running, you may install any of the following packages to get special features. (Not all of these have been extensively tested; file a bug if any don’t work as expected.)
 
 Start with these packages; they’re all builtin, actively maintained, and/or built exclusively for Pulsar:
 
