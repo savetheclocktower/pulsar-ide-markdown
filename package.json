@@ -1,7 +1,7 @@
 {
   "name": "pulsar-ide-markdown",
   "main": "./lib/main",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An IDE package for Markdown using md-lsp or Marksman",
   "keywords": [],
   "activationHooks": [
@@ -26,7 +26,10 @@
       "description": "Which language server this package should use. Choose your favorite between Marksman and md-lsp.",
       "type": "string",
       "default": "Marksman",
-      "enum": ["Marksman", "md-lsp"],
+      "enum": [
+        "Marksman",
+        "md-lsp"
+      ],
       "order": 0
     },
     "binMarksman": {
@@ -43,7 +46,6 @@
       "description": "Path to your installation of `md-lsp`. If you've chosen “Marksman” above, you may ignore this setting. The default value should work if `md-lsp` is on your `PATH; if you encounter errors, consider specifying the full, absolute path to your `md-lsp` binary.",
       "order": 2
     },
-
     "diagnostics": {
       "title": "Diagnostics",
       "order": 3,
