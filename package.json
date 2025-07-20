@@ -36,14 +36,14 @@
       "title": "Path to Marksman",
       "default": "marksman",
       "type": "string",
-      "description": "Path to your installation of `marksman`. If you've chosen “md-lsp” above, you may ignore this setting. The default value should work if `marksman` is on your `PATH; if you encounter errors, consider specifying the full, absolute path to your `marksman` binary.",
+      "description": "Path to your installation of `marksman`. If you've chosen “md-lsp” above, you may ignore this setting. The default value should work if `marksman` is on your `PATH`; if you encounter errors, consider specifying the full, absolute path to your `marksman` binary.",
       "order": 1
     },
     "binMdLsp": {
       "title": "Path to md-lsp",
       "default": "md-lsp",
       "type": "string",
-      "description": "Path to your installation of `md-lsp`. If you've chosen “Marksman” above, you may ignore this setting. The default value should work if `md-lsp` is on your `PATH; if you encounter errors, consider specifying the full, absolute path to your `md-lsp` binary.",
+      "description": "Path to your installation of `md-lsp`. If you've chosen “Marksman” above, you may ignore this setting. The default value should work if `md-lsp` is on your `PATH`; if you encounter errors, consider specifying the full, absolute path to your `md-lsp` binary.",
       "order": 2
     },
     "diagnostics": {
